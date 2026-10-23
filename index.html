@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A study in the world's rarest natural fibers." />
+  <title>AC THREAD — Exquisite Fibers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#1d211d; --cream:#f5f1ea; --paper:#fcfbf8; --sage:#6d796a; --gold:#b0915d; --line:rgba(29,33,29,.16); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
+    .nav { position:absolute; z-index:2; top:0; width:100%; display:flex; justify-content:space-between; align-items:center; padding:28px 5.5%; color:#fff; }
+    .brand { letter-spacing:.19em; font-family:"Playfair Display",serif; font-size:18px; text-transform:uppercase; }
+    .nav-links { display:flex; gap:30px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .nav a { color:inherit; text-decoration:none; }
+    .hero { min-height:100svh; color:#fff; display:flex; align-items:flex-end; padding:0 5.5% 9vh; position:relative; overflow:hidden; background:linear-gradient(90deg,rgba(10,14,11,.58),rgba(10,14,11,.08)), url("https://johnstonsofelgin.com/cdn/shop/files/MOBILE-HEADER.webp?v=1729686999&width=2000") center/cover; }
+    .hero:after { content:""; position:absolute; inset:auto 0 0; height:32%; background:linear-gradient(transparent,rgba(7,9,7,.42)); }
+    .hero-content { position:relative; z-index:1; max-width:820px; animation:rise 1.2s ease-out both; }
+    .eyebrow { margin:0 0 20px; color:inherit; font-size:11px; letter-spacing:.2em; text-transform:uppercase; opacity:.9; }
+    h1,h2,h3 { font-family:"Playfair Display",serif; font-weight:500; }
+    h1 { font-size:clamp(50px,8.3vw,122px); line-height:.92; letter-spacing:-.045em; margin:0; }
+    .hero p { max-width:460px; font-size:18px; line-height:1.55; margin:28px 0 0; }
+    .scroll { position:absolute; z-index:1; right:5.5%; bottom:9vh; font-size:10px; letter-spacing:.18em; text-transform:uppercase; writing-mode:vertical-rl; }
+    section { padding:135px 5.5%; }
+    .intro { display:grid; grid-template-columns:1fr 1.25fr; gap:13%; align-items:start; background:var(--cream); }
+    .intro h2 { font-size:clamp(39px,5.1vw,72px); line-height:1; letter-spacing:-.04em; margin:0; }
+    .intro-copy { padding-top:9px; }
+    .intro-copy p { font-size:clamp(18px,2vw,27px); line-height:1.45; margin:0; max-width:680px; }
+    .rule { width:56px; border:0; border-top:1px solid var(--gold); margin:39px 0 28px; }
+    .label { font-size:11px; color:var(--sage); letter-spacing:.18em; text-transform:uppercase; }
+    .collection { background:var(--paper); }
+    .section-heading { display:flex; justify-content:space-between; align-items:end; margin-bottom:58px; }
+    .section-heading h2 { margin:8px 0 0; font-size:clamp(42px,5.4vw,78px); line-height:.9; letter-spacing:-.05em; }
+    .section-heading p { max-width:260px; line-height:1.55; font-size:14px; }
+    .grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+    .card { min-height:570px; padding:31px; display:flex; flex-direction:column; justify-content:flex-end; position:relative; overflow:hidden; color:#fff; isolation:isolate; }
+    .card:before { content:""; position:absolute; z-index:-1; inset:0; background:var(--img) center/cover; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+    .card:after { content:""; position:absolute; z-index:-1; inset:0; background:linear-gradient(transparent 38%,rgba(8,10,8,.75)); }
+    .card:hover:before { transform:scale(1.055); }
+    .card .number { position:absolute; top:29px; left:31px; font-size:11px; letter-spacing:.15em; }
+    .card h3 { margin:0 0 8px; font-size:clamp(32px,3.5vw,52px); line-height:1; }
+    .card em { font-family:"Playfair Display",serif; font-size:19px; }
+    .card p { max-width:370px; margin:13px 0 0; font-size:14px; line-height:1.5; }
+    .quote { padding:155px 10%; text-align:center; background:#29342a; color:#f7f4ec; }
+    .quote p { max-width:980px; font-family:"Playfair Display",serif; font-size:clamp(36px,5.2vw,78px); line-height:1.06; letter-spacing:-.045em; margin:18px auto; }
+    .quote .label { color:#d2b57d; }
+    .footer { min-height:74vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 5.5%; background:linear-gradient(rgba(21,28,21,.51),rgba(21,28,21,.6)), url("https://www.versiegelung24.com/wp-content/uploads/2023/02/warm-cashmere-fabric-as-background-top-view-1300x852.jpg") center/cover; color:white; }
+    .footer h2 { margin:14px 0 28px; font-size:clamp(48px,7.3vw,98px); line-height:.95; letter-spacing:-.05em; }
+    .button { display:inline-flex; border:1px solid rgba(255,255,255,.74); padding:16px 27px; color:white; font-size:11px; letter-spacing:.16em; text-decoration:none; text-transform:uppercase; transition:.25s ease; }
+    .button:hover { color:var(--ink); background:#fff; }
+    .footer small { opacity:.7; margin-top:100px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; }
+    @keyframes rise { from { opacity:0; transform:translateY(26px) } to { opacity:1; transform:translateY(0) } }
+    @media (max-width:680px) { .nav { padding:22px 7%; } .nav-links { display:none; } .hero { padding:0 7% 12vh; } .scroll { display:none; } section { padding:87px 7%; } .intro { grid-template-columns:1fr; gap:36px; } .section-heading { display:block; margin-bottom:35px; } .section-heading p { margin-top:24px; } .grid { grid-template-columns:1fr; } .card { min-height:460px; padding:25px; } .card .number { left:25px; top:25px; } .quote { padding:105px 7%; } }
+  </style>
+</head>
+<body>
+  <nav class="nav"><a class="brand" href="#top">AC THREAD</a><div class="nav-links"><a href="#collection">The collection</a><a href="#heritage">Our heritage</a><a href="#discover">Discover</a></div></nav>
+  <main id="top">
+    <section class="hero" aria-label="Vicuña in the Andes"><div class="hero-content"><p class="eyebrow">A study in rare natural fibers</p><h1>The world’s most exquisite fibers.</h1><p>A journey through the textures of nature’s rarest treasures—from high mountain peaks to the deep sea.</p></div><span class="scroll">Scroll to explore</span></section>
+    <section class="intro" id="heritage"><div><p class="label">The rare made tangible</p><h2>Quietly<br>extraordinary.</h2></div><div class="intro-copy"><p>Explore the heritage of luxury through the fibers that define elegance. Each is shaped by an exceptional climate, a singular animal, and the patience of careful hands.</p><hr class="rule"><p class="label">Natural. Traceable. Enduring.</p></div></section>
+    <section class="collection" id="collection"><div class="section-heading"><div><p class="label">The collection — 01–04</p><h2>Fibers with a story.</h2></div><p>Four remarkable materials, each with an unmistakable character and a place in the world’s finest wardrobes.</p></div>
+      <div class="grid">
+        <article class="card" style="--img:url('https://cdn.shopify.com/s/files/1/0832/3422/6463/files/Image_09-11-2023_at_12.59.jpg?v=1699534788&width=2000')"><span class="number">01 / Andes</span><h3>Vicuña</h3><em>The Fiber of the Gods.</em><p>For the world’s most exclusive outerwear and scarves—lightness with an almost impossible softness.</p></article>
+        <article class="card" style="--img:url('https://caas.production.calzedonia.coremedia.cloud/caas/v1/media/6422084/data/9730b29d96dac98001de55c539b5c441')"><span class="number">02 / Arctic</span><h3>Qiviut</h3><em>Arctic Warmth.</em><p>Remarkably insulating and featherlight, made for ultra-warm winter essentials.</p></article>
+        <article class="card" style="--img:url('https://www.versiegelung24.com/wp-content/uploads/2023/02/warm-cashmere-fabric-as-background-top-view-1300x852.jpg')"><span class="number">03 / Highlands</span><h3>Cashmere</h3><em>Timeless Softness.</em><p>The enduring standard for elevated knitwear and effortless, everyday elegance.</p></article>
+        <article class="card" style="--img:url('https://www.susansilk.com/cdn/shop/files/1-small_0922aeaf-3173-41e9-922e-8c1099ad4de6.jpg?v=1670299322&width=1080')"><span class="number">04 / Sea</span><h3>Sea Silk</h3><em>The Golden Thread.</em><p>Reserved for the most delicate, artisanal textiles—luminous, rare, and made by hand.</p></article>
+      </div>
+    </section>
+    <section class="quote"><p class="label">A material is never just a material</p><p>“Luxury is the feeling of something rare becoming part of your everyday.”</p></section>
+    <section class="footer" id="discover"><p class="eyebrow">The art of rare textiles</p><h2>Discover what<br>nature makes possible.</h2><a class="button" href="mailto:aniyah@acthreadprojectinc.com">aniyah@acthreadprojectinc.com</a><small>AC THREAD · Est. 2026</small></section>
+  </main>
+</body>
+</html>
