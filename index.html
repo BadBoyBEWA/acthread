@@ -14,7 +14,9 @@
     html { scroll-behavior:smooth; }
     body { margin:0; color:var(--ink); background:var(--paper); font-family:"DM Sans",sans-serif; }
     .nav { position:absolute; z-index:2; top:0; width:100%; display:flex; justify-content:space-between; align-items:center; padding:28px 5.5%; color:#fff; }
-    .brand { letter-spacing:.19em; font-family:"Playfair Display",serif; font-size:18px; text-transform:uppercase; }
+    .brand { display:inline-flex; align-items:center; gap:12px; color:inherit; text-decoration:none; }
+    .brand img { width:58px; height:58px; display:block; border-radius:50%; object-fit:cover; box-shadow:0 4px 18px rgba(0,0,0,.22); }
+    .brand span { letter-spacing:.19em; font-family:"Playfair Display",serif; font-size:18px; text-transform:uppercase; }
     .nav-links { display:flex; gap:30px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
     .nav a { color:inherit; text-decoration:none; }
     .hero { min-height:100svh; color:#fff; display:flex; align-items:flex-end; padding:0 5.5% 9vh; position:relative; overflow:hidden; background:linear-gradient(90deg,rgba(10,14,11,.58),rgba(10,14,11,.08)), url("https://johnstonsofelgin.com/cdn/shop/files/MOBILE-HEADER.webp?v=1729686999&width=2000") center/cover; }
@@ -48,17 +50,20 @@
     .quote { padding:155px 10%; text-align:center; background:#29342a; color:#f7f4ec; }
     .quote p { max-width:980px; font-family:"Playfair Display",serif; font-size:clamp(36px,5.2vw,78px); line-height:1.06; letter-spacing:-.045em; margin:18px auto; }
     .quote .label { color:#d2b57d; }
+    .inquiry { display:flex; align-items:center; justify-content:space-between; gap:28px; padding:40px 5.5%; background:#e9e1d3; }
+    .inquiry p { margin:0; font-family:"Playfair Display",serif; font-size:clamp(23px,3vw,38px); }
+    .inquiry a { color:var(--ink); font-size:12px; font-weight:600; letter-spacing:.1em; text-decoration:none; text-transform:uppercase; border-bottom:1px solid var(--ink); padding-bottom:5px; white-space:nowrap; }
     .footer { min-height:74vh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:100px 5.5%; background:linear-gradient(rgba(21,28,21,.51),rgba(21,28,21,.6)), url("https://www.versiegelung24.com/wp-content/uploads/2023/02/warm-cashmere-fabric-as-background-top-view-1300x852.jpg") center/cover; color:white; }
     .footer h2 { margin:14px 0 28px; font-size:clamp(48px,7.3vw,98px); line-height:.95; letter-spacing:-.05em; }
     .button { display:inline-flex; border:1px solid rgba(255,255,255,.74); padding:16px 27px; color:white; font-size:11px; letter-spacing:.16em; text-decoration:none; text-transform:uppercase; transition:.25s ease; }
     .button:hover { color:var(--ink); background:#fff; }
     .footer small { opacity:.7; margin-top:100px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; }
     @keyframes rise { from { opacity:0; transform:translateY(26px) } to { opacity:1; transform:translateY(0) } }
-    @media (max-width:680px) { .nav { padding:22px 7%; } .nav-links { display:none; } .hero { padding:0 7% 12vh; } .scroll { display:none; } section { padding:87px 7%; } .intro { grid-template-columns:1fr; gap:36px; } .section-heading { display:block; margin-bottom:35px; } .section-heading p { margin-top:24px; } .grid { grid-template-columns:1fr; } .card { min-height:460px; padding:25px; } .card .number { left:25px; top:25px; } .quote { padding:105px 7%; } }
+    @media (max-width:680px) { .nav { padding:22px 7%; } .brand img { width:48px; height:48px; } .nav-links { display:none; } .hero { padding:0 7% 12vh; } .scroll { display:none; } section { padding:87px 7%; } .intro { grid-template-columns:1fr; gap:36px; } .section-heading { display:block; margin-bottom:35px; } .section-heading p { margin-top:24px; } .grid { grid-template-columns:1fr; } .card { min-height:460px; padding:25px; } .card .number { left:25px; top:25px; } .quote { padding:105px 7%; } .inquiry { display:block; padding:32px 7%; } .inquiry a { display:inline-block; margin-top:18px; } }
   </style>
 </head>
 <body>
-  <nav class="nav"><a class="brand" href="#top">AC THREAD</a><div class="nav-links"><a href="#collection">The collection</a><a href="#heritage">Our heritage</a><a href="#discover">Discover</a></div></nav>
+  <nav class="nav"><a class="brand" href="#top"><img src="assets/ac-thread-project-logo.png" alt="AC Thread Project Inc. logo"><span>AC THREAD</span></a><div class="nav-links"><a href="#collection">The collection</a><a href="#heritage">Our heritage</a><a href="#discover">Discover</a></div></nav>
   <main id="top">
     <section class="hero" aria-label="Vicuña in the Andes"><div class="hero-content"><p class="eyebrow">A study in rare natural fibers</p><h1>The world’s most exquisite fibers.</h1><p>A journey through the textures of nature’s rarest treasures—from high mountain peaks to the deep sea.</p></div><span class="scroll">Scroll to explore</span></section>
     <section class="intro" id="heritage"><div><p class="label">The rare made tangible</p><h2>Quietly<br>extraordinary.</h2></div><div class="intro-copy"><p>Explore the heritage of luxury through the fibers that define elegance. Each is shaped by an exceptional climate, a singular animal, and the patience of careful hands.</p><hr class="rule"><p class="label">Natural. Traceable. Enduring.</p></div></section>
@@ -71,7 +76,8 @@
       </div>
     </section>
     <section class="quote"><p class="label">A material is never just a material</p><p>“Luxury is the feeling of something rare becoming part of your everyday.”</p></section>
-    <section class="footer" id="discover"><p class="eyebrow">The art of rare textiles</p><h2>Discover what<br>nature makes possible.</h2><a class="button" href="mailto:aniyah@acthreadprojectinc.com">aniyah@acthreadprojectinc.com</a><small>AC THREAD · Est. 2026</small></section>
+    <section class="inquiry" aria-label="Contact for inquiries"><p>For further inquiries &amp; enquiries.</p><a href="mailto:aniyah@acthreadprojectinc.com">aniyah@acthreadprojectinc.com ↗</a></section>
+    <section class="footer" id="discover"><p class="eyebrow">The art of rare textiles</p><h2>Discover what<br>nature makes possible.</h2><a class="button" href="mailto:aniyah@acthreadprojectinc.com">aniyah@acthreadprojectinc.com</a><small>© AC THREAD PROJECT INC 2026. ALL RIGHTS RESERVED.</small></section>
   </main>
 </body>
 </html>
